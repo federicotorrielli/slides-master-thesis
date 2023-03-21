@@ -48,6 +48,7 @@ Il linguaggio è la **proprietà evolutiva** che primariamente ci differenzia da
 Solo grazie ad esso riusciamo a comunicare, costruire relazioni e creare comunità che ci hanno permesso di fare un considerevole salto evolutivo.
 
 La stessa azione del comunicare è considerevole e sottovalutata: ci permette (non ironicamente!) di **leggere nelle menti** altrui.
+
 ---
 layout: center
 ---
@@ -56,7 +57,8 @@ layout: center
 
 Il vocabolario è il cuore pulsante della nostra lingua, **l'elemento comune** a qualsiasi dialetto.
 
-Gli umani hanno un'ottima capacità di comunicare grazie a **set di lessemi**ed espressioni linguistiche che solitamente sono organizzate tramite **strutture gerarchiche**:
+Gli umani hanno un'ottima capacità di comunicare grazie a **set di lessemi** ed espressioni linguistiche che solitamente sono organizzate tramite **strutture gerarchiche**:
+
 - Super-ordinate: categorie **inclusive**, generali, ampie
 - Subordinate: categorie *specifiche* fatte di relazioni **iponimiche** con le precedenti
 
@@ -74,10 +76,10 @@ Nel contesto sovracitato si colloca la nozione psico-linguistica del **basic lev
 ---
 layout: center
 ---
-
 # Contributi della tesi
 
 Indentificazione di termini *basic* e *advanced* tramite due approcci computazionali:
+
 - Approccio **testuale**: un large language model pre-addestrato e utilizzato generativamente
 - Approccio **multi-modale**: una pipeline *text+image* che sfrutta reti neurali multi-modali stato dell'arte.
 
@@ -90,8 +92,95 @@ layout:center
 # Nota: distacco dalla letteratura corrente
 
 Il nostro approccio fa un passo indietro da quella che è considerata la letteratura *comune* riguardante il **basic level**, che solitamente è orientata al livello **concettuale**, per i seguenti motivi:
+
 - Analizzare termini **e** concetti in maniera congiunta crea una evidente **complessità** di analisi che la corrente letteratura ignora
 - Esperimenti pre-esistenti prendono in considerazione solo spazi semantici quali *cibo, strumenti musicali e attrezzi*
 - Le categorie *basic* vegono analizzate senza una corretta e precisa definizione che invece risulta imperativa.
 
 Per queste motivazioni, il nostro scopo è di analizzare **termini considerati basic da second-language learners**.
+---
+layout: center
+---
+# How shall a thing be called? (1958)
+
+<center>
+  <img src="images/brown.jpg" class="rounded shadow"/>
+</center>
+
+Roger Brown pone una *domanda* fondamentale: 
+
+> Come facciamo a scegliere un **termine appropiato** per un **concetto** scelto?
+
+---
+layout: two-cols
+---
+
+# Il basic di Brown
+
+Individua **4 caratteristiche fondamentali** che devono condividere le parole basic:
+
+- Brevi
+- Concrete
+- Facili da pronunciare
+- Frequentemente utilizzate tra le disponibili per un certo concetto
+
+::right::
+
+# Il nostro basic
+
+<v-clicks>
+
+- Strumenti per la **sopravvivenza sociale**
+- Brevi, facili da pronunciare *verbalmente* e da concettualizzare
+- Le **prime parole** che vengono alla mente quando si parla di un certo *topic*
+- Facilmente traducibili in una **chiara immagine mentale**
+
+</v-clicks>
+---
+layout: two-cols
+---
+
+# Basic
+
+- House, Book, Chair, Table
+- Orange, Apple
+- Dog, Cat
+- Thing, Fact
+- Justice, Fun
+
+::right::
+
+# Advanced
+
+- Mansion, Novel, Recliner, Board
+- Tangerine, Granny Smith
+- Chihuahua, Maine coon
+- Artifact, Evidence
+- Reprisal, Amusement
+
+---
+
+# Basic level e teoria duale
+
+- Termini *basic* e *advanced* sono associati alla teoria duale di Daniel Kahneman (System 1/2):
+  - **basic**: 
+    - collegati al System1
+    - facilmente accessibili alla memoria
+    - richiedono sforzo minimo
+    - preferiti per decisioni rapide
+  - **advanced**: 
+    - collegati al System2
+    - richiedono uno sforzo maggiore
+    - forniscono una descrizione dettagliata
+    - appropiati per considerzioni e analisi accurate
+
+---
+layout: center 
+---
+# Utilizzo del basic level
+
+- Utili per chi **impara una nuova lingua**: comprensione, produzione e conversazione
+- Utilizzo nella **UI** di un prodotto
+- Utilizzo in **automatic recommenders**, generatori di **sommari** ed **information extraction**
+
+---
