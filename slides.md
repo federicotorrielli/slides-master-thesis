@@ -176,6 +176,7 @@ layout: two-cols
 
 ---
 layout: center 
+transition: slide-up
 ---
 # Utilizzo del basic level
 
@@ -184,3 +185,76 @@ layout: center
 - Utilizzo in **automatic recommenders**, generatori di **sommari** ed **information extraction**
 
 ---
+layout: cover
+# TODO mettere immagine di background anche qua
+---
+
+# Task sul livello testuale
+
+Il metodo OPT
+
+---
+layout: center
+---
+
+# Text-Based Pipeline
+
+La prima pipeline utilizza *OPT*, un large language model generativo **transformer-based**.
+
+<center>
+  <img src="images/OPT-pipeline.png" style="width: 60%"/>
+</center>
+
+---
+layout: two-cols
+---
+
+# Transformers
+
+Rete neurale basata su uno stack di **encoder-decoder**, adatta per dati di tipo testuale.
+
+- **Encoder**: processa la sequenza di input (una serie di token) e restituisce un **embedding** (una rappresentazione continua) utilizzando la **self-attention** e un layer **feed-forward** in maniera indipendente.
+- **Decoder**: prende gli embeddings in input e ha come output finale una distribuzione probabilistica sul singolo token.
+
+<center>
+  <img src="images/Transformer_decoder.png" style=""/>
+</center>
+
+::right::
+
+<center>
+  <img src="images/transformer-architecture.png" style=""/>
+</center>
+---
+layout: two-cols
+---
+
+# Encoder Side
+
+
+
+<center>
+<br><br><br>
+  <img src="images/transformer_decoding_1.gif" style=""/>
+</center>
+
+::right::
+
+# Decoder Side
+
+<center>
+<br><br><br>
+  <img src="images/transformer_decoding_2.gif" style=""/>
+</center>
+
+---
+layout: center
+---
+
+# Architettura OPT
+
+Suite di decoder-only pre-trained transformers: architettura auto-regressiva semplice, composta solo da decoder impilati.
+
+<center>
+  <img src="images/opt-decoder-only.png" style="width: 60%"/>
+</center>
