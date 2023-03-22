@@ -253,8 +253,28 @@ layout: center
 
 # Architettura OPT
 
-Suite di decoder-only pre-trained transformers: architettura auto-regressiva semplice, composta solo da decoder impilati.
+Suite di decoder-only pre-trained transformers: architettura **auto-regressiva** semplice, composta solo da decoder impilati.
 
 <center>
   <img src="images/opt-decoder-only.png" style="width: 60%"/>
 </center>
+
+---
+
+# I Transformer non sono altro che Next Token Predictor
+
+- **Obiettivo**: prevedere il **token successivo** in una sequenza di parole, migliorando la coerenza e la comprensione del testo generato
+- **Funzionamento**:
+  - Viene utilizzata la *multi-headed attention* per catturare informazioni da contesti diversi
+  - Calcola la **probabilità** di ciascun token candidato nel **vocabolario**
+  - Seleziona il token con la **probabilità più alta** come previsione successiva
+
+<v-clicks>
+
+- Federico
+- prenderà
+- il
+- seguente
+- voto:
+
+</v-clicks>
