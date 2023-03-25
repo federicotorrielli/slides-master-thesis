@@ -1,14 +1,14 @@
 ---
 # try also 'default' to start simple
-theme: academic
+theme: apple-basic
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-layout: cover
-coverBackgroundUrl: https://source.unsplash.com/collection/94734566/1920x1080 # TODO CAMBIARLA
-coverAuthor: Federico Torrielli
-coverDate: 14/04/2023
+layout: intro
+# coverBackgroundUrl: https://source.unsplash.com/collection/94734566/1920x1080 # TODO CAMBIARLA
+# coverAuthor: Federico Torrielli
+# coverDate: 14/04/2023
 # apply any windi css classes to the current slide
-class: 'text-center'
+# class: 'text-center'
 # https://sli.dev/custom/highlighters.html
 highlighter: shiki
 # show line numbers in code blocks
@@ -22,14 +22,17 @@ transition: slide-left
 # css: unocss
 # https://github.com/alexanderdavide/slidev-theme-academic
 ---
-
 # How shall a machine call a thing?
 
 Exploring Basicness in Language through Attention-based Neural Networks and Human-in-the-Loop Methodology
 
-<div class="flex items-center justify-center min-h-screen">
-  <span @click="$slidev.nav.next" class="cursor-pointer">
-    <img src="images/LOGO%20UNITO_VERTICALE_COLORE.svg" class="w-auto" style="height: 55px"/>
+<center>
+  <img src="images/LOGO%20UNITO_VERTICALE_COLORE.svg" class="w-auto" style="height: 60px"/>
+</center>
+
+<div class="absolute bottom-10">
+  <span class="font-700">
+    Federico Torrielli, 14/04/2023
   </span>
 </div>
 
@@ -83,7 +86,7 @@ Indentificazione di termini *basic* e *advanced* tramite due approcci computazio
 - Approccio **testuale**: un large language model pre-addestrato e utilizzato generativamente
 - Approccio **multi-modale**: una pipeline *text+image* che sfrutta reti neurali multi-modali stato dell'arte.
 
-Inoltre, un'ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** umani e la **definizione** della nozione di **basicness**, basandosi sulla letteratura esistente sulla *concreteness* e 
+Inoltre, un'ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** umani e la **definizione** della nozione di **basicness**, basandosi sulla letteratura esistente sulla *concreteness*
 
 ---
 layout:center
@@ -99,13 +102,10 @@ Il nostro approccio fa un passo indietro da quella che è considerata la lettera
 
 Per queste motivazioni, il nostro scopo è di analizzare **termini considerati basic da second-language learners**.
 ---
-layout: center
+layout: intro-image-right
+image: 'images/brown-shall.jpg'
 ---
 # How shall a thing be called? (1958)
-
-<center>
-  <img src="images/brown.jpg" class="rounded shadow"/>
-</center>
 
 Roger Brown pone una *domanda* fondamentale: 
 
@@ -185,7 +185,7 @@ transition: slide-up
 - Utilizzo in **automatic recommenders**, generatori di **sommari** ed **information extraction**
 
 ---
-layout: cover
+layout: section
 # TODO mettere immagine di background anche qua
 ---
 
@@ -231,8 +231,6 @@ layout: two-cols
 
 # Encoder Side
 
-
-
 <center>
 <br><br><br>
   <img src="images/transformer_decoding_1.gif" style=""/>
@@ -253,15 +251,15 @@ layout: center
 
 # Architettura OPT
 
-Suite di decoder-only pre-trained transformers: architettura **auto-regressiva** semplice, composta solo da decoder impilati.
+Suite di decoder-only pre-trained transformers: architettura **auto-regressiva** semplice, composta solo da decoder impilati. Utilizzato unicamente per scopi **generativi**.
 
 <center>
-  <img src="images/opt-decoder-only.png" style="width: 60%"/>
+  <img src="images/opt-decoder-only.png" style="width: 50%"/>
 </center>
 
 ---
 
-# I Transformer non sono altro che Next Token Predictor
+# I LLM non sono altro che Next Token Predictor
 
 - **Obiettivo**: prevedere il **token successivo** in una sequenza di parole, migliorando la coerenza e la comprensione del testo generato
 - **Funzionamento**:
@@ -269,12 +267,54 @@ Suite di decoder-only pre-trained transformers: architettura **auto-regressiva**
   - Calcola la **probabilità** di ciascun token candidato nel **vocabolario**
   - Seleziona il token con la **probabilità più alta** come previsione successiva
 
-<v-clicks>
+---
 
-- Federico
-- prenderà
-- il
-- seguente
-- voto:
+# I LLM non sono altro che Next Token Predictor
 
-</v-clicks>
+Al contrario degli umani, i LLM sono eccezionali nel prevedere la prossima parola
+
+<br><br><br><br><br>
+<div style="text-align: center;">
+  <v-clicks>
+  <div style="display: inline-block; width: 100px; height: 100px; margin: 10px;">Federico</div>
+  <div style="display: inline-block; width: 100px; height: 100px; margin: 10px;">prenderà</div>
+  <div style="display: inline-block; width: 80px; height: 100px; margin: 10px;">come</div>
+  <div style="display: inline-block; width: 80px; height: 100px; margin: 10px;">voto</div>
+  <div style="display: inline-block; width: 70px; height: 100px; margin: 10px;">di</div>
+  <div style="display: inline-block; width: 60px; height: 100px; margin: 10px;">laurea</div>
+  <div style="display: inline-block; width: 70px; height: 100px; margin: 10px;">...</div>
+  </v-clicks>
+</div>
+
+---
+layout: center
+---
+
+# Come estrarre termini basic/advanced con un modello generativo?
+
+- Creazione di una *basic raw list*
+- **Filtraggio** tramite *OPT*
+- **Estrazione** di termini Advanced
+- **Raffinamento** del dataset finale
+
+---
+
+# Creazione della basic raw list
+
+- **Input**: termini estratti da liste di termini *semplici* (e.g. Ogden) e da testi di language-learners su Reddit
+- **Output**: set iniziale di termini da *filtrare* usando **OPT** e, contemporaneamente, i loro synset associati (*best-frequency*) per l'estrazione di **advanced**
+
+<center>
+  <img src="images/raw_list_creation.drawio.png" style="width:60%">
+</center>
+
+---
+
+# Filtraggio tramite OPT
+
+- **Input**: il set iniziale di termini
+- **Output**: una lista di parole **OPT-basic**
+
+<center>
+  <img src="images/OPT-diagram.drawio.png" style="width:70%">
+</center>
