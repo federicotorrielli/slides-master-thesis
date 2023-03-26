@@ -429,9 +429,23 @@ layout: center
 
 # Valutare immagini
 
-Valutiamo se l'immagine si avvicina al lemma originale che l'ha generata utilizzando **SBERT**, una rete *siamese* (ovvero fatta da due reti identiche in training, comparate in testing) BERT-based che utilizza un layer di *pooling* per generare degli **embeddings** utilizzati per confrontare testi in uno spazio semantico.
+Valutiamo se l'immagine si avvicina al lemma originale che l'ha generata utilizzando **SBERT**, una rete *siamese* (ovvero fatta da due reti identiche in training, comparate in testing) BERT-based che utilizza un layer di *pooling* per generare degli **embeddings** utilizzati per confrontare testi in uno spazio semantico utilizzando la **cosine-similarity**.
 
 Abbiamo costruito un componente *custom* per adattare il task di classificazione selezionato
+
+---
+layout: center
+---
+
+# Classificazione
+
+Una volta raccolte le *cosine-similarities* di tutte le immagini, si fa un **threshold sweep** per verificare quale sia il limite superiore di classificazione. 
+
+*e.g.*: se $x$ è il threshold, allora: $\forall y<x, y$ basic, advanced altrimenti.
+
+<center>
+  <img src="images/complete-screen.png" style="width: 50%">
+</center>
 
 ---
 
