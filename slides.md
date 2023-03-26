@@ -384,5 +384,57 @@ layout: center
 
 ---
 
-# Trasformare il testo in immagini
+# Generare immagini
 
+- Viene utilizzata la **diffusione**: un processo a doppia passata per allenare modelli a partire da enormi dataset di immagini
+  - **Forward pass**: viene *distrutta* la struttura dei dati aggiungendo del **rumore Gaussiano** all'immagine attraverso una *catena di Markov*. I dati vengono *assorbiti* nello spazio latente.
+  - **Backward pass**: si cerca di re-imparare i dati di origine andando a progressivamente **rimuovere il rumore dalle immagini**, navigando nello spazio latente e generando nuovi dati
+
+
+<center>
+  <br><br>
+  <img src="images/denoising.png" style="width:70%">
+</center>
+
+---
+layout: center
+---
+
+<center>
+  <video controls>
+  <source src="videos/castle-animation.webm" type="video/webm">
+  </video> 
+</center>
+
+---
+
+<center>
+  <img src="images/stable-diffusion-diffusion-process.png" style="">
+</center>
+
+---
+
+# Interrogare immagini
+
+Viene utilizzato **BLIP**, un sistema multi-modale capace di generare delle descrizioni delle immagini presentate. Gli autori del paper hanno scelto di utilizzare un **ViT** (Vision Transformer) e un **MED** (Multi-modal mixture of Encoder-Decoder).
+
+- **ViT**: scompone l'immagine di partenza in **features** e trasforma le features in una sequenza di **embeddings**
+- **MED**: produce degli stati nascosti, che sono dati in pasto ad un Text Transformer, che ha diversi obiettivi, tra cui l'**image captioning**
+  - **Unimodal Encoder**: viene utilizzata la **image-text contrastive loss** per allineare le feature di un testo alle immagini in uno spazio semantico
+  - **Image-grounded text encoder+decoder**: viene utilizzata la **language modeling loss**, addestrata per ridurre la discrepanza immagine-testo
+
+---
+layout: center
+---
+
+# Valutare immagini
+
+Valutiamo se l'immagine si avvicina al lemma originale che l'ha generata utilizzando **SBERT**, una rete *siamese* (ovvero fatta da due reti identiche in training, comparate in testing) BERT-based che utilizza un layer di *pooling* per generare degli **embeddings** utilizzati per confrontare testi in uno spazio semantico.
+
+Abbiamo costruito un componente *custom* per adattare il task di classificazione selezionato
+
+---
+
+<center>
+  <img src="images/stableknowledge-architecture.drawio.png" style="width: 50%">
+</center>
