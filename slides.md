@@ -305,6 +305,7 @@ layout: center
 - **Output**: set iniziale di termini da *filtrare* usando **OPT** e, contemporaneamente, i loro synset associati (*best-frequency*) per l'estrazione di **advanced**
 
 <center>
+  <br><br>
   <img src="images/raw_list_creation.drawio.png" style="width:60%">
 </center>
 
@@ -316,5 +317,72 @@ layout: center
 - **Output**: una lista di parole **OPT-basic**
 
 <center>
+  <br><br>
   <img src="images/OPT-diagram.drawio.png" style="width:70%">
 </center>
+
+---
+
+# Estrazione di termini advanced
+
+Partendo dai synset basic vengono fatti controlli:
+
+- Frequenza significativa in **SemCor**
+- **Path Distance** appropriata
+- **Nessuna parola condivisa** tra il *synset* e l'*iponimo*
+- Non devono esserci parole basic nella advanced list
+
+<center>
+  <br><br>
+  <img src="images/advanced-list-diagram.drawio.png" style="width:70%">
+</center>
+
+---
+transition: slide-up
+---
+
+# Dataset fine-tuning
+
+Vegono prodotti **500 termini**, 250 sono *OPT-basic* e 250 sono *OPT-advanced*.
+Le due liste (basic+advanced) vengono **combinate**, **filtrate** per rimuovere *parole offensive* o dannose, selezionate in base alla loro **frequenza** e poi **mischiate** per produrre il dataset finale da somministrare agli utenti.
+
+<center>
+  <br><br>
+  <img src="images/dataset-fine-tuning-diagram.drawio.png" style="width:80%">
+</center>
+
+---
+layout: intro-image
+image: 'images/collage_ba.png'
+---
+
+<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Task sul livello visivo</h1>
+  <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">stableKnowledge</p>
+</div>
+
+---
+
+# Pipeline multi-modale
+
+- *text-to-image*: **Stable Diffuson**
+- *image-to-text*: **BLIP**
+- *semantic text evaluation*: **SBERT**
+
+<center>
+  <br><br>
+  <img src="images/SD-pipeline.png" style="width:70%">
+</center>
+
+---
+layout: center
+---
+
+# Come mai abbiamo bisogno del livello visivo?
+
+**Ipotesi**: un sistema che possiede l'abilità di riconoscere l'informazione dal livello testuale al livello visivo (e viceversa), ha una conoscenza profonda del suo contenuto, in maniera similare a come l'uomo conosce il mondo.
+
+---
+
+# Trasformare il testo in immagini
+
