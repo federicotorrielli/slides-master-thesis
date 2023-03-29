@@ -452,3 +452,72 @@ Una volta raccolte le *cosine-similarities* di tutte le immagini, si fa un **thr
 <center>
   <img src="images/stableknowledge-architecture.drawio.png" style="width: 50%">
 </center>
+
+---
+
+# Il task di annotazione
+
+Per comparare i dati classificati dai metodi automatici con uno **standard** abbiamo creato un tool personalizzato e sottoposto **10 second-language-learners** al task di annotazione di **basic vs. advanced** sulle *500 parole*.
+
+Tra i dati interessanti raccolti menzioniamo:
+
+- Statistiche sul **tempo**
+- Parole classificate come **difficli da annotare**
+- **Agreement** tra gli annotatori
+
+---
+
+<center>
+  <img src="images/page4.png" style="width: 60%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); border-radius: 10px;">
+  <br><br><hr><br><br>
+  <img src="images/page5.png" style="width: 20%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); border-radius: 10px;">
+</center>
+
+
+
+---
+
+# Agreement tra gli annotatori
+
+Abbiamo ottenuto un **alto** inter-annotation agreement, misurato con il Coefficiente *k* di **Cohen**, la cui formula è 
+
+$$k=\frac{p_o-p_e}{1-p_e}$$
+
+Dove:
+
+- $p_o$ è l'agreement osservato relativo tra gli annotatori
+- $p_e$ è la probabilità ipotetica di agreement *casuale*
+
+Si misura in una scala che va da **0** (nessun agreement) a **1** (agreement perfetto): agreement superiori a *0.6* sono considerati molto buoni su task con più di **5 persone**.
+
+<center>
+  <img src="https://www.statology.org/wp-content/uploads/2021/02/kappa1-300x229.png" style="width:5cm">
+</center>
+
+---
+layout: fact
+---
+
+# 0.71
+
+agreement riportato tra gli annotatori, che indica un task con ottime guidelines
+
+---
+layout: two-cols
+---
+
+# Fatti interessanti
+
+- Gli annotatori hanno impiegato più tempo (*80% in più*) a valutare parole basic piuttosto che quelle advanced
+- Il tempo medio è stato di **1.40 secondi**
+- Le parole più difficili da classificare sono state:
+  - Parole composte da più basic: **vitamin pill**
+  - Parole prese da altre lingue: **avenue**
+  - Parole corte ma con un significato complesso: **kin**
+
+::right::
+
+<center>
+  <br><br><br><br><br><br>
+  <img src="images/time_spent_on_annotations.png">
+</center>
