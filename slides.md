@@ -473,8 +473,6 @@ Tra i dati interessanti raccolti menzioniamo:
   <img src="/images/page5.png" style="width: 20%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); border-radius: 10px;">
 </center>
 
-
-
 ---
 
 # Agreement tra gli annotatori
@@ -504,6 +502,7 @@ agreement riportato tra gli annotatori, che indica un task con ottime guidelines
 
 ---
 layout: two-cols
+transitions: slide-up
 ---
 
 # Fatti interessanti
@@ -521,3 +520,27 @@ layout: two-cols
   <br><br><br><br><br><br>
   <img src="/images/time_spent_on_annotations.png">
 </center>
+
+---
+layout: intro-image
+image: 'images/collage_ba.png'
+---
+
+<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Risultati</h1>
+  <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">OPT vs. stableKnowledge</p>
+</div>
+
+---
+
+# Risultati sul task basic vs. advanced
+
+<br><br><br><br>
+<center>
+  <img src="/images/table_basicadvanced.png" style="width: 60%">
+</center>
+
+---
+
+# Una scoperta interessante
+
