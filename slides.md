@@ -27,7 +27,7 @@ transition: slide-left
 Exploring Basicness in Language through Attention-based Neural Networks and Human-in-the-Loop Methodology
 
 <center>
-  <img src="images/logo_unito_new.png" class="w-auto" style="height: 60px"/>
+  <img src="/images/logo_unito_new.png" class="w-auto" style="height: 60px"/>
 </center>
 
 <div class="absolute bottom-10">
@@ -202,7 +202,7 @@ layout: center
 La prima pipeline utilizza *OPT*, un large language model generativo **transformer-based**.
 
 <center>
-  <img src="images/OPT-pipeline.png" style="width: 60%"/>
+  <img src="/images/OPT-pipeline.png" style="width: 60%"/>
 </center>
 
 ---
@@ -217,13 +217,13 @@ Rete neurale basata su uno stack di **encoder-decoder**, adatta per dati di tipo
 - **Decoder**: prende gli embeddings in input e ha come output finale una distribuzione probabilistica sul singolo token.
 
 <center>
-  <img src="images/Transformer_decoder.png" style=""/>
+  <img src="/images/Transformer_decoder.png" style=""/>
 </center>
 
 ::right::
 
 <center>
-  <img src="images/transformer-architecture.png" style=""/>
+  <img src="/images/transformer-architecture.png" style=""/>
 </center>
 ---
 layout: two-cols
@@ -233,7 +233,7 @@ layout: two-cols
 
 <center>
 <br><br><br>
-  <img src="images/transformer_decoding_1.gif" style=""/>
+  <img src="/images/transformer_decoding_1.gif" style=""/>
 </center>
 
 ::right::
@@ -242,7 +242,7 @@ layout: two-cols
 
 <center>
 <br><br><br>
-  <img src="images/transformer_decoding_2.gif" style=""/>
+  <img src="/images/transformer_decoding_2.gif" style=""/>
 </center>
 
 ---
@@ -254,7 +254,7 @@ layout: center
 Suite di decoder-only pre-trained transformers: architettura **auto-regressiva** semplice, composta solo da decoder impilati. Utilizzato unicamente per scopi **generativi**.
 
 <center>
-  <img src="images/opt-decoder-only.png" style="width: 50%"/>
+  <img src="/images/opt-decoder-only.png" style="width: 50%"/>
 </center>
 
 ---
@@ -306,7 +306,7 @@ layout: center
 
 <center>
   <br><br>
-  <img src="images/raw_list_creation.drawio.png" style="width:60%">
+  <img src="/images/raw_list_creation.drawio.png" style="width:60%">
 </center>
 
 ---
@@ -318,7 +318,7 @@ layout: center
 
 <center>
   <br><br>
-  <img src="images/OPT-diagram.drawio.png" style="width:70%">
+  <img src="/images/OPT-diagram.drawio.png" style="width:70%">
 </center>
 
 ---
@@ -334,7 +334,7 @@ Partendo dai synset basic vengono fatti controlli:
 
 <center>
   <br><br>
-  <img src="images/advanced-list-diagram.drawio.png" style="width:70%">
+  <img src="/images/advanced-list-diagram.drawio.png" style="width:70%">
 </center>
 
 ---
@@ -348,7 +348,7 @@ Le due liste (basic+advanced) vengono **combinate**, **filtrate** per rimuovere 
 
 <center>
   <br><br>
-  <img src="images/dataset-fine-tuning-diagram.drawio.png" style="width:80%">
+  <img src="/images/dataset-fine-tuning-diagram.drawio.png" style="width:80%">
 </center>
 
 ---
@@ -371,7 +371,7 @@ image: 'images/collage_ba.png'
 
 <center>
   <br><br>
-  <img src="images/SD-pipeline.png" style="width:70%">
+  <img src="/images/SD-pipeline.png" style="width:70%">
 </center>
 
 ---
@@ -393,7 +393,7 @@ layout: center
 
 <center>
   <br><br>
-  <img src="images/denoising.png" style="width:70%">
+  <img src="/images/denoising.png" style="width:70%">
 </center>
 
 ---
@@ -402,14 +402,14 @@ layout: center
 
 <center>
   <video controls>
-  <source src="videos/castle-animation.webm" type="video/webm">
+  <source src="/videos/castle-animation.webm" type="video/webm">
   </video> 
 </center>
 
 ---
 
 <center>
-  <img src="images/stable-diffusion-diffusion-process.png" style="">
+  <img src="/images/stable-diffusion-diffusion-process.png" style="">
 </center>
 
 ---
@@ -444,13 +444,13 @@ Una volta raccolte le *cosine-similarities* di tutte le immagini, si fa un **thr
 *e.g.*: se $x$ è il threshold, allora: $\forall y<x, y$ basic, advanced altrimenti.
 
 <center>
-  <img src="images/complete-screen.png" style="width: 50%">
+  <img src="/images/complete-screen.png" style="width: 50%">
 </center>
 
 ---
 
 <center>
-  <img src="images/stableknowledge-architecture.drawio.png" style="width: 50%">
+  <img src="/images/stableknowledge-architecture.drawio.png" style="width: 50%">
 </center>
 
 ---
@@ -468,9 +468,9 @@ Tra i dati interessanti raccolti menzioniamo:
 ---
 
 <center>
-  <img src="images/page4.png" style="width: 60%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); border-radius: 10px;">
+  <img src="/images/page4.png" style="width: 60%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); border-radius: 10px;">
   <br><br><hr><br><br>
-  <img src="images/page5.png" style="width: 20%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); border-radius: 10px;">
+  <img src="/images/page5.png" style="width: 20%; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5); border-radius: 10px;">
 </center>
 
 
@@ -519,5 +519,5 @@ layout: two-cols
 
 <center>
   <br><br><br><br><br><br>
-  <img src="images/time_spent_on_annotations.png">
+  <img src="/images/time_spent_on_annotations.png">
 </center>
