@@ -27,7 +27,7 @@ transition: slide-left
 Exploring Basicness in Language through Attention-based Neural Networks and Human-in-the-Loop Methodology
 
 <center>
-  <img src="images/logo_unito_new.svg" class="w-auto" style="height: 60px"/>
+  <img src="images/logo_unito_new.png" class="w-auto" style="height: 60px"/>
 </center>
 
 <div class="absolute bottom-10">
