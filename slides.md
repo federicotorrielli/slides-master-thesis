@@ -225,25 +225,6 @@ Rete neurale basata su uno stack di **encoder-decoder**, adatta per dati di tipo
 <center>
   <img src="/images/transformer-architecture.png" style=""/>
 </center>
----
-layout: two-cols
----
-
-# Encoder Side
-
-<center>
-<br><br><br>
-  <img src="/images/transformer_decoding_1.gif" style=""/>
-</center>
-
-::right::
-
-# Decoder Side
-
-<center>
-<br><br><br>
-  <img src="/images/transformer_decoding_2.gif" style=""/>
-</center>
 
 ---
 layout: center
@@ -544,3 +525,38 @@ image: 'images/collage_ba.png'
 
 # Una scoperta interessante
 
+Investigando sui dati raccolti abbiamo scoperto che **termini basic e concreti sono meglio riconosciuti dal livello testuale**.
+
+Questo ci ha portato a ipotizzare che l'**image level** fosse più adatto a classificare la **concreteness**.
+
+<v-click>
+
+L'ipotesi è stata confermata dal nostro *secondo esperimento*: **concrete vs. abstract**
+
+- Presa una lista di concetti dal database di **MRC**, con score **[0, 700]**
+- Classificati tutti i sostantivi nella lista con i nostri due metodi (con fine-tuning sulla concreteness)
+- Analizzati i risultati
+
+</v-click>
+
+---
+
+# Risultati sul task concrete vs. abstract
+
+<br><br>
+<center>
+  <img src="/images/table_concreteabstract.png" style="width: 60%">
+</center>
+
+Questi risultati indicano che quando si tratta di differenziare concetti concreti da astratti, i due metodi performano **al contario** rispetto al task precedente!
+
+<v-click>
+
+L'origine di questa discrepanza è nell'architettura e nel **training set** dei modelli utilizzati:
+
+- OPT è **text-based**, ovvero, addestrato in maniera supervisionata su enormi quantità di dati testuali
+- SD è **image-based**, ovvero, addestrato su **immagini** e **captions**
+
+</v-click>
+
+---
