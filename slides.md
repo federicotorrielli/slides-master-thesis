@@ -480,11 +480,10 @@ layout: fact
 
 # 0.71
 
-agreement riportato tra gli annotatori, che indica un task con ottime guidelines
+agreement tra annotatori, che indica un task con ottime guidelines
 
 ---
 layout: two-cols
-transitions: slide-up
 ---
 
 # Fatti interessanti
@@ -501,6 +500,26 @@ transitions: slide-up
 <center>
   <br><br><br><br><br><br>
   <img src="/images/time_spent_on_annotations.png">
+</center>
+
+---
+layout: two-cols
+transitions: slide-up
+---
+
+# Basicness
+
+<br><br><br><br>
+
+Dalle analisi è risultato che la classificazione **basic vs. advanced** non è una **proprietà binaria**, ma deve essere posizionata su una scala misurabile.
+
+Da questa ipotesi è nata la **basicness**, una misura similare alla *concreteness* che segnala quanto è basic un certo termine, basandosi sullo **split** nell'annotazione del lemma stesso.
+
+::right::
+
+<center>
+  <br><br><br><br><br><br><br><br><br>
+  <img src="/images/basicness.png" style="width:50%">
 </center>
 
 ---
