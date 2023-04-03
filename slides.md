@@ -81,12 +81,12 @@ layout: center
 ---
 # Contributi della tesi
 
-Indentificazione di termini *basic* e *advanced* tramite due approcci computazionali:
+Indentificazione di termini *basic* e *advanced* + *concrete* e *abstract* tramite due approcci computazionali:
 
 - Approccio **testuale**: un large language model pre-addestrato e utilizzato generativamente
 - Approccio **multi-modale**: una pipeline *text+image* che sfrutta reti neurali multi-modali stato dell'arte.
 
-Inoltre, un'ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** umani e la **definizione** della nozione di **basicness**, basandosi sulla letteratura esistente sulla *concreteness*
+Inoltre, un ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** umani e la **definizione** della nozione di **basicness**, basandosi sulla letteratura esistente sulla *concreteness*
 
 ---
 layout:center
@@ -183,6 +183,7 @@ transition: slide-up
 - Utili per chi **impara una nuova lingua**: comprensione, produzione e conversazione
 - Utilizzo nella **UI** di un prodotto
 - Utilizzo in **automatic recommenders**, generatori di **sommari** ed **information extraction**
+- Utilizzo per **text simplification** al fine di trattare *DSA* come la  *Dislessia*
 
 ---
 layout: section
@@ -191,7 +192,7 @@ layout: section
 
 # Task sul livello testuale
 
-Il metodo OPT
+> Il metodo *OPT*
 
 ---
 layout: center
@@ -443,7 +444,7 @@ Per comparare i dati classificati dai metodi automatici con uno **standard** abb
 Tra i dati interessanti raccolti menzioniamo:
 
 - Statistiche sul **tempo**
-- Parole classificate come **difficli da annotare**
+- Parole classificate come **difficili da annotare**
 - **Agreement** tra gli annotatori
 
 ---
@@ -560,3 +561,35 @@ L'origine di questa discrepanza è nell'architettura e nel **training set** dei 
 </v-click>
 
 ---
+
+# Conclusione: Sum-up
+
+- Proposta una nuova nozione di **"basicness"** ispirata alla letteratura sulla concreteness
+- Creata un'ampia **wordlist inter-categoria** di parole basic/advanced
+- Sviluppata una metodologia **human-in-the-loop** con 10 annotatori con *alto agreement*
+- Creati metodi per la classificazione di elementi terminologici utilizzando reti neurali stato dell'arte per **CV** e **NLP**
+- Mostrata una pipeline image-based che combina **text-to-image** e **image-to-text** per scopi NLP, novità assoluta in letteratura
+
+---
+
+# Conclusione: Future Work
+
+- **Scoperte secondarie**: Gli approcci basati su immagini funzionano meglio per i termini concreti e astratti ma non per la classificazione di base rispetto a quella avanzata. È stata formulata un'ipotesi ma sono necessarie ulteriori ricerche.
+- Le pipeline multimodali potrebbero migliorare gli attuali Large Language Model che replicano solo la **rete linguistica** e mancano di vera intelligenza. Le affermazioni secondo cui i LLMs hanno proprietà umane come la Teoria della Mente richiedono un esame critico.
+- Alcune immagini generate hanno mostrato una **qualità "uncanny"** che richiede ulteriori approfondimenti per risolvere il problema mantenendo un'alta qualità.
+
+---
+
+# Sidenote Finale
+
+- I ricercatori dovrebbero avere una prospettiva equilibrata sui LLMs e sugli LDMs. Non dovrebbero essere temuti, glorificati o eccessivamente pubblicizzati. Sono strumenti per aiutare gli umani ma non sono intelligenti o in grado di pensare o immaginare come gli umani. Un'enfasi eccessiva potrebbe portare a un nuovo **"AI Winter"**
+- Sebbene le aziende promuovano i progressi nell'AI, le università dovrebbero competere con loro per promuovere modelli aperti e ricerche per una vera apertura. La ricerca condotta solo dalle aziende potrebbe mancare della necessaria trasparenza e collaborazione per condividere i risultati con la comunità di ricerca in generale.
+
+---
+layout: intro-image
+image: '/images/final_background.png'
+---
+
+<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Grazie per l'attenzione</h1>
+</div>
