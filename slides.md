@@ -1,6 +1,6 @@
 ---
 # try also 'default' to start simple
-theme: apple-basic
+theme: academic
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
 layout: intro
@@ -13,9 +13,6 @@ layout: intro
 highlighter: shiki
 # show line numbers in code blocks
 lineNumbers: false
-# persist drawings in exports and build
-drawings:
-  persist: false
 # page transition
 transition: slide-left
 # use UnoCSS
@@ -51,6 +48,7 @@ Il linguaggio è la **proprietà evolutiva** che primariamente ci differenzia da
 Solo grazie ad esso riusciamo a comunicare, costruire relazioni e creare comunità che ci hanno permesso di fare un considerevole salto evolutivo.
 
 La stessa azione del comunicare è considerevole e sottovalutata: ci permette (non ironicamente!) di **leggere nelle menti** altrui.
+
 
 ---
 layout: center
@@ -103,14 +101,19 @@ Il nostro approccio fa un passo indietro da quella che è considerata la lettera
 Per queste motivazioni, il nostro scopo è di analizzare **termini considerati basic da second-language learners**.
 
 ---
-layout: intro-image-right
-image: '/images/brown-shall.jpg'
+layout: two-cols
 ---
 # How shall a thing be called? (1958)
+
+<br><br><br><br>
 
 Roger Brown pone una *domanda* fondamentale: 
 
 > Come facciamo a scegliere un **termine appropiato** per un **concetto** scelto?
+
+::right::
+
+<img src="/images/brown-shall.jpg">
 
 ---
 layout: two-cols
@@ -187,8 +190,9 @@ transition: slide-up
 - Utilizzo per **text simplification** al fine di trattare *DSA* come la  *Dislessia*
 
 ---
-layout: intro-image
-image: '/images/attention.png'
+layout: cover
+coverBackgroundUrl: '/images/attention.png'
+coverDate: ''
 ---
 
 <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
@@ -336,8 +340,9 @@ Le due liste (basic+advanced) vengono **combinate**, **filtrate** per rimuovere 
 </center>
 
 ---
-layout: intro-image
-image: '/images/collage_ba.png'
+layout: cover
+coverBackgroundUrl: '/images/collage_ba.png'
+coverDate: ''
 ---
 
 <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
@@ -410,7 +415,7 @@ Secondo gli autori BLIP è "*an unholy concoction of many different things, in o
 ---
 
 <center>
-  <img src="/images/blip_arch.png" style="width: 65%">
+  <img src="/images/blip_arch.png" style="width: 60%">
 </center>
 
 - **ITC** (*Image-Text Contrastive Loss*): attiva l'unimodal encoder, serve per **allineare il feature space del ViT e del Text Transformer** incoraggiando coppie positive di **image-text** e scoraggiando coppie semanticamente lontane
@@ -480,19 +485,21 @@ Dove:
 - $p_o$ è l'agreement osservato relativo tra gli annotatori
 - $p_e$ è la probabilità ipotetica di agreement *casuale*
 
-Si misura in una scala che va da **0** (nessun agreement) a **1** (agreement perfetto): agreement superiori a *0.6* sono considerati molto buoni su task con più di **5 persone**.
+Si misura in una scala che va da **0** (nessun agreement) a **1** (agreement perfetto).
 
 <center>
   <img src="https://www.statology.org/wp-content/uploads/2021/02/kappa1-300x229.png" style="width:5cm">
 </center>
 
 ---
-layout: fact
+layout: cover
+coverDate: ''
 ---
 
-# 0.71
-
-agreement tra annotatori, che indica un task con ottime guidelines
+<center>
+  <h1>0.71</h1>
+  <b>agreement</b> tra annotatori, che indica un task con <b>ottime guidelines</b>
+</center>
 
 ---
 layout: two-cols
@@ -607,8 +614,9 @@ L'origine di questa discrepanza è nell'architettura e nel **training set** dei 
 - Sebbene le aziende promuovano i progressi nell'AI, le università dovrebbero competere con loro per promuovere modelli aperti e ricerche per una vera apertura. La ricerca condotta solo dalle aziende potrebbe mancare della necessaria trasparenza e collaborazione per condividere i risultati con la comunità di ricerca in generale.
 
 ---
-layout: intro-image
-image: '/images/final_background.png'
+layout: cover
+coverBackgroundUrl: '/images/final_background.png'
+coverDate: ''
 ---
 
 <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
