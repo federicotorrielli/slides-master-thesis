@@ -104,7 +104,7 @@ Per queste motivazioni, il nostro scopo è di analizzare **termini considerati b
 
 ---
 layout: intro-image-right
-image: 'images/brown-shall.jpg'
+image: '/images/brown-shall.jpg'
 ---
 # How shall a thing be called? (1958)
 
@@ -188,7 +188,7 @@ transition: slide-up
 
 ---
 layout: intro-image
-image: 'images/attention.png'
+image: '/images/attention.png'
 ---
 
 <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
@@ -337,7 +337,7 @@ Le due liste (basic+advanced) vengono **combinate**, **filtrate** per rimuovere 
 
 ---
 layout: intro-image
-image: 'images/collage_ba.png'
+image: '/images/collage_ba.png'
 ---
 
 <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
