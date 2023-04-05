@@ -101,6 +101,7 @@ Il nostro approccio fa un passo indietro da quella che è considerata la lettera
 - Le categorie *basic* vegono analizzate senza una corretta e precisa definizione che invece risulta imperativa.
 
 Per queste motivazioni, il nostro scopo è di analizzare **termini considerati basic da second-language learners**.
+
 ---
 layout: intro-image-right
 image: 'images/brown-shall.jpg'
@@ -186,13 +187,14 @@ transition: slide-up
 - Utilizzo per **text simplification** al fine di trattare *DSA* come la  *Dislessia*
 
 ---
-layout: section
-# TODO mettere immagine di background anche qua
+layout: intro-image
+image: 'images/attention.png'
 ---
 
-# Task sul livello testuale
-
-> Il metodo *OPT*
+<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Task sul livello testuale</h1>
+  <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">OPT</p>
+</div>
 
 ---
 layout: center
@@ -214,7 +216,7 @@ layout: two-cols
 
 Rete neurale basata su uno stack di **encoder-decoder**, adatta per dati di tipo testuale.
 
-- **Encoder**: processa la sequenza di input (una serie di token) e restituisce un **embedding** (una rappresentazione continua) utilizzando la **self-attention** e un layer **feed-forward** in maniera indipendente.
+- **Encoder**: processa la sequenza di input (una serie di token) e restituisce **embeddings** (una rappresentazione contestuale verso il decoder) utilizzando layer di **self-attention**, **normalization** e **FFN**.
 - **Decoder**: prende gli embeddings in input e ha come output finale una distribuzione probabilistica sul singolo token.
 
 <center>
@@ -274,7 +276,7 @@ layout: center
 
 # Come estrarre termini basic/advanced con un modello generativo?
 
-- Creazione di una *basic raw list*
+- **Creazione** di una *basic raw list*
 - **Filtraggio** tramite *OPT*
 - **Estrazione** di termini Advanced
 - **Raffinamento** del dataset finale
@@ -309,7 +311,7 @@ layout: center
 
 Partendo dai synset basic vengono fatti controlli:
 
-- Frequenza significativa in **SemCor**
+- Frequenza significativa in **SemCor**, *un corpus annotato*
 - **Path Distance** appropriata
 - **Nessuna parola condivisa** tra il *synset* e l'*iponimo*
 - Non devono esserci parole basic nella advanced list
@@ -401,9 +403,19 @@ layout: center
 Viene utilizzato **BLIP**, un sistema multi-modale capace di generare delle descrizioni delle immagini presentate. Gli autori del paper hanno scelto di utilizzare un **ViT** (Vision Transformer) e un **MED** (Multi-modal mixture of Encoder-Decoder).
 
 - **ViT**: scompone l'immagine di partenza in **features** e trasforma le features in una sequenza di **embeddings**
-- **MED**: produce degli stati nascosti, che sono dati in pasto ad un Text Transformer, che ha diversi obiettivi, tra cui l'**image captioning**
-  - **Unimodal Encoder**: viene utilizzata la **image-text contrastive loss** per allineare le feature di un testo alle immagini in uno spazio semantico
-  - **Image-grounded text encoder+decoder**: viene utilizzata la **language modeling loss**, addestrata per ridurre la discrepanza immagine-testo
+- **MED**: produce degli stati dati in pasto ad un Transformer, che fa **image captioning**. MED opera come **Unimodal Encoder** (ITC Loss) e **Image-grounded text enc/decoder** (ITM+LM Loss)
+
+Secondo gli autori BLIP è "*an unholy concoction of many different things, in one, trained jointly*"
+
+---
+
+<center>
+  <img src="/images/blip_arch.png" style="width: 65%">
+</center>
+
+- **ITC** (*Image-Text Contrastive Loss*): attiva l'unimodal encoder, serve per **allineare il feature space del ViT e del Text Transformer** incoraggiando coppie positive di **image-text** e scoraggiando coppie semanticamente lontane
+- **ITM** (*Image-Text Matching Loss*): attiva l'image-grounded text encoder, serve per imparare la rappresentazione multi-modale attraverso un semplice **task di classificazione binaria**, facendo una predizione: data una feature multimodale, si conferma se l'image-text pair è positiva o meno
+- **LM** (*Language Modeling Loss*): attiva l'image-grounded text decoder, serve per generare descrizioni testuali data un'immagine
 
 ---
 layout: center
@@ -411,7 +423,7 @@ layout: center
 
 # Valutare immagini
 
-Valutiamo se l'immagine si avvicina al lemma originale che l'ha generata utilizzando **SBERT**, una rete *siamese* (ovvero fatta da due reti identiche in training, comparate in testing) BERT-based che utilizza un layer di *pooling* per generare degli **embeddings** utilizzati per confrontare testi in uno spazio semantico utilizzando la **cosine-similarity**.
+Valutiamo se l'immagine si avvicina al lemma originale che l'ha generata utilizzando **SBERT**, una rete *siamese* (due reti identiche in training, comparate in testing) BERT-based che utilizza un layer di *pooling* per generare degli **embeddings** utilizzati per confrontare testi in uno spazio semantico utilizzando la **cosine-similarity**.
 
 Abbiamo costruito un componente *custom* per adattare il task di classificazione selezionato
 
@@ -523,16 +535,6 @@ Da questa ipotesi è nata la **basicness**, una misura similare alla *concretene
 </center>
 
 ---
-layout: intro-image
-image: 'images/collage_ba.png'
----
-
-<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
-  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Risultati</h1>
-  <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">OPT vs. stableKnowledge</p>
-</div>
-
----
 
 # Risultati sul task basic vs. advanced
 
@@ -593,7 +595,7 @@ L'origine di questa discrepanza è nell'architettura e nel **training set** dei 
 
 # Conclusione: Future Work
 
-- **Scoperte secondarie**: Gli approcci basati su immagini funzionano meglio per i termini concreti e astratti ma non per la classificazione di base rispetto a quella avanzata. È stata formulata un'ipotesi ma sono necessarie ulteriori ricerche.
+- **Scoperte secondarie**: Gli approcci basati su immagini funzionano meglio per i termini concreti e astratti ma non per la classificazione basic/advanced. È stata formulata un'ipotesi ma sono necessarie ulteriori ricerche.
 - Le pipeline multimodali potrebbero migliorare gli attuali Large Language Model che replicano solo la **rete linguistica** e mancano di vera intelligenza. Le affermazioni secondo cui i LLMs hanno proprietà umane come la Teoria della Mente richiedono un esame critico.
 - Alcune immagini generate hanno mostrato una **qualità "uncanny"** che richiede ulteriori approfondimenti per risolvere il problema mantenendo un'alta qualità.
 
