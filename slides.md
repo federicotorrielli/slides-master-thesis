@@ -610,6 +610,7 @@ coverDate: ''
 
 <div style="position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; left: 0;">
   <img src="/images/final_background.png" style="height: 100%; width: 100%;">
+  <img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 20%">
   <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
     <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Grazie per l'attenzione</h1>
   </div>
