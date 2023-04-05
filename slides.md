@@ -4,6 +4,8 @@ layout: intro
 highlighter: shiki
 lineNumbers: false
 transition: slide-left
+drawings: 
+  syncAll: false
 ---
 # How shall a machine call a thing?
 
