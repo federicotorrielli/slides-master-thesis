@@ -191,13 +191,15 @@ transition: slide-up
 
 ---
 layout: cover
-coverBackgroundUrl: '/images/attention.png'
 coverDate: ''
 ---
 
-<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
-  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Task sul livello testuale</h1>
-  <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">OPT</p>
+<div style="position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; left: 0;">
+  <img src="/images/attention.png" style="height: 100%; width: 100%;">
+  <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+    <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Task sul livello testuale</h1>
+    <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">OPT</p>
+  </div>
 </div>
 
 ---
@@ -341,13 +343,15 @@ Le due liste (basic+advanced) vengono **combinate**, **filtrate** per rimuovere 
 
 ---
 layout: cover
-coverBackgroundUrl: '/images/collage_ba.png'
 coverDate: ''
 ---
 
-<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
-  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Task sul livello visivo</h1>
-  <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">stableKnowledge</p>
+<div style="position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; left: 0;">
+  <img src="/images/collage_ba.png" style="height: 100%; width: 100%;">
+  <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 20px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+    <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Task sul livello visivo</h1>
+    <p style="color: black; text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);">stableKnowledge</p>
+  </div>
 </div>
 
 ---
@@ -615,10 +619,12 @@ L'origine di questa discrepanza è nell'architettura e nel **training set** dei 
 
 ---
 layout: cover
-coverBackgroundUrl: '/images/final_background.png'
 coverDate: ''
 ---
 
-<div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
-  <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Grazie per l'attenzione</h1>
+<div style="position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; left: 0;">
+  <img src="/images/final_background.png" style="height: 100%; width: 100%;">
+  <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
+    <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Grazie per l'attenzione</h1>
+  </div>
 </div>
