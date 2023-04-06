@@ -7,7 +7,8 @@ transition: slide-left
 drawings: 
   syncAll: false
 ---
-# How shall a machine call a thing?
+
+<h1 style="font-size: 50px">How shall a machine call a thing?</h1>
 
 Exploring Basicness in Language through Attention-based Neural Networks and Human-in-the-Loop Methodology
 
@@ -20,6 +21,16 @@ Exploring Basicness in Language through Attention-based Neural Networks and Huma
     Federico Torrielli, 14/04/2023
   </span>
 </div>
+
+<div class="absolute right-10 bottom-10">
+  <span class="font-600">
+    <b>Relatore</b>: <i>Prof. Luigi Di Caro</i>
+    <br>
+    <b>Contro-relatore</b>: <i>Prof. Valerio Basile</i>
+  </span>
+</div>
+
+<img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 13%">
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
