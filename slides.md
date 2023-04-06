@@ -383,8 +383,10 @@ layout: center
 
 <center>
   <video controls>
-  <source src="/videos/castle-animation.webm" type="video/webm">
-  </video> 
+    <source src="/videos/castle-animation.webm" type="video/webm">
+    <source src="/videos/castle-animation.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 </center>
 
 ---
