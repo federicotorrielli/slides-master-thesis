@@ -13,7 +13,9 @@ drawings:
 Exploring Basicness in Language through Attention-based Neural Networks and Human-in-the-Loop Methodology
 
 <center>
-  <img src="/images/logo_unito_new.png" class="w-auto" style="height: 60px"/>
+  <a href="https://torrielli.netlify.app">
+    <img src="/images/logo_unito_new.png" class="w-auto" style="height: 60px"/>
+  </a>
 </center>
 
 <div class="absolute bottom-10">
@@ -30,7 +32,9 @@ Exploring Basicness in Language through Attention-based Neural Networks and Huma
   </span>
 </div>
 
-<img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 13%">
+<a href="https://torrielli.netlify.app">
+  <img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 13%">
+</a>
 
 <!--
 The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
@@ -83,21 +87,7 @@ Indentificazione di termini *basic* e *advanced* + *concrete* e *abstract* trami
 - Approccio **testuale**: un large language model pre-addestrato e utilizzato generativamente
 - Approccio **multi-modale**: una pipeline *text+image* che sfrutta reti neurali multi-modali stato dell'arte.
 
-Inoltre, un ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** umani e la **definizione** della nozione di **basicness**, basandosi sulla letteratura esistente sulla *concreteness*
-
----
-layout:center
----
-
-# Nota: distacco dalla letteratura corrente
-
-Il nostro approccio fa un passo indietro da quella che è considerata la letteratura *comune* riguardante il **basic level**, che solitamente è orientata al livello **concettuale**, per i seguenti motivi:
-
-- Analizzare termini **e** concetti in maniera congiunta crea una evidente **complessità** di analisi che la corrente letteratura ignora
-- Esperimenti pre-esistenti prendono in considerazione solo spazi semantici quali *cibo, strumenti musicali e attrezzi*
-- Le categorie *basic* vegono analizzate senza una corretta e precisa definizione che invece risulta imperativa.
-
-Per queste motivazioni, il nostro scopo è di analizzare **termini considerati basic da second-language learners**.
+Inoltre, un ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** language-learners e la **definizione** della nozione di **basicness**, basandosi sulla letteratura esistente sulla *concreteness*
 
 ---
 layout: two-cols
@@ -160,22 +150,6 @@ layout: two-cols
 - Chihuahua, Maine coon
 - Artifact, Evidence
 - Reprisal, Amusement
-
----
-
-# Basic level e teoria duale
-
-- Termini *basic* e *advanced* sono associati alla teoria duale di Daniel Kahneman (System 1/2):
-  - **basic**: 
-    - collegati al System1
-    - facilmente accessibili alla memoria
-    - richiedono sforzo minimo
-    - preferiti per decisioni rapide
-  - **advanced**: 
-    - collegati al System2
-    - richiedono uno sforzo maggiore
-    - forniscono una descrizione dettagliata
-    - appropiati per considerzioni e analisi accurate
 
 ---
 layout: center 
@@ -367,6 +341,12 @@ coverDate: ''
 </center>
 
 ---
+
+<center>
+  <img src="/images/stableknowledge-architecture.drawio.png" style="width: 50%">
+</center>
+
+---
 layout: center
 ---
 
@@ -449,12 +429,6 @@ Una volta raccolte le *cosine-similarities* di tutte le immagini, si fa un **thr
 
 <center>
   <img src="/images/complete-screen.png" style="width: 50%">
-</center>
-
----
-
-<center>
-  <img src="/images/stableknowledge-architecture.drawio.png" style="width: 50%">
 </center>
 
 ---
