@@ -403,16 +403,6 @@ Viene utilizzato **BLIP**, un sistema multi-modale capace di generare delle desc
 Secondo gli autori BLIP è "*an unholy concoction of many different things, in one, trained jointly*"
 
 ---
-
-<center>
-  <img src="/images/blip_arch.png" style="width: 60%">
-</center>
-
-- **ITC** (*Image-Text Contrastive Loss*): attiva l'unimodal encoder, serve per **allineare il feature space del ViT e del Text Transformer** incoraggiando coppie positive di **image-text** e scoraggiando coppie semanticamente lontane
-- **ITM** (*Image-Text Matching Loss*): attiva l'image-grounded text encoder, serve per imparare la rappresentazione multi-modale attraverso un semplice **task di classificazione binaria**, facendo una predizione: data una feature multimodale, si conferma se l'image-text pair è positiva o meno
-- **LM** (*Language Modeling Loss*): attiva l'image-grounded text decoder, serve per generare descrizioni testuali data un'immagine
-
----
 layout: center
 ---
 
