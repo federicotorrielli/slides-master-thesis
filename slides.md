@@ -4,9 +4,20 @@ layout: intro
 highlighter: shiki
 lineNumbers: false
 transition: slide-left
+colorSchema: 'light'
+title: 'How shall a machine call a thing?'
+titleTemplate: '%s - Federico Torrielli'
 drawings: 
   syncAll: false
 ---
+
+<style>
+    mark {
+      background-color: #ffba08;
+      color: black;
+      border-radius: 0.25rem;
+    }
+</style>
 
 <h1 style="font-size: 50px">How shall a machine call a thing?</h1>
 
@@ -46,7 +57,7 @@ layout: center
 
 # Introduzione
 
-Il linguaggio è la **proprietà evolutiva** che primariamente ci differenzia da qualsiasi altro animale.
+Il linguaggio è la <mark>**proprietà evolutiva**</mark> che primariamente ci differenzia da qualsiasi altro animale.
 
 Solo grazie ad esso riusciamo a comunicare, costruire relazioni e creare comunità che ci hanno permesso di fare un considerevole salto evolutivo.
 
@@ -230,13 +241,7 @@ Suite di decoder-only pre-trained transformers: architettura **auto-regressiva**
   - Calcola la **probabilità** di ciascun token candidato nel **vocabolario**
   - Seleziona il token con la **probabilità più alta** come previsione successiva
 
----
-
-# I LLM non sono altro che Next Token Predictor
-
-Al contrario degli umani, i LLM sono eccezionali nel prevedere la prossima parola
-
-<br><br><br><br><br>
+<br><br>
 <div style="text-align: center;">
   <v-clicks>
   <div style="display: inline-block; width: 100px; height: 100px; margin: 10px;">Federico</div>
