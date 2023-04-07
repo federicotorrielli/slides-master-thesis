@@ -13,7 +13,7 @@ drawings:
 
 <style>
     mark {
-      background-color: #ffba08;
+      background-color: #ffb703;
       color: black;
       border-radius: 0.25rem;
     }
@@ -72,7 +72,7 @@ layout: center
 
 Il vocabolario è il cuore pulsante della nostra lingua, **l'elemento comune** a qualsiasi dialetto.
 
-Gli umani hanno un'ottima capacità di comunicare grazie a **set di lessemi** ed espressioni linguistiche che solitamente sono organizzate tramite **strutture gerarchiche**:
+Gli umani hanno un'ottima capacità di comunicare grazie a <mark>**set di lessemi**</mark> ed espressioni linguistiche che solitamente sono organizzate tramite <mark style="background-color: #219ebc">**strutture gerarchiche**</mark>:
 
 - Super-ordinate: categorie **inclusive**, generali, ampie
 - Subordinate: categorie *specifiche* fatte di relazioni **iponimiche** con le precedenti
@@ -83,22 +83,22 @@ layout: center
 
 # Basic/Advanced Level
 
-Nel contesto sovracitato si colloca la nozione psico-linguistica del **basic level**, ciò che, secondo la letteratura, possiede le seguenti caratteristiche:
+Nel contesto sovracitato si colloca la <mark>**nozione psico-linguistica**</mark> del *basic level*, ciò che, secondo la letteratura, possiede le seguenti caratteristiche:
 - Livello *ottimale* di **economia cognitiva**
-- Alto livello di class-inclusion
-- Mediamente generale, culturalmente comune e saliente
+- Alto livello di **class-inclusion**
+- Mediamente **generale**, culturalmente comune e *saliente*
 
 ---
 layout: center
 ---
 # Contributi della tesi
 
-Indentificazione di termini *basic* e *advanced* + *concrete* e *abstract* tramite due approcci computazionali:
+Indentificazione di termini <mark>*basic/advanced* + *concrete/abstract*</mark> tramite due approcci computazionali:
 
-- Approccio **testuale**: un large language model pre-addestrato e utilizzato generativamente
-- Approccio **multi-modale**: una pipeline *text+image* che sfrutta reti neurali multi-modali stato dell'arte.
+- <mark style="background-color: #fb8500">Approccio **testuale**</mark>: un large language model pre-addestrato e utilizzato generativamente
+- <mark style="background-color: #219ebc">Approccio **multi-modale**</mark>: una pipeline *text+image* che sfrutta reti neurali multi-modali stato dell'arte.
 
-Inoltre, un ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** language-learners e la **definizione** della nozione di **basicness**, basandosi sulla letteratura esistente sulla *concreteness*
+Inoltre, un ulteriore contributo è la creazione di un dataset di 500 parole *basic* e *advanced* esemplari grazie ad un *panel* di **dieci annotatori** language-learners e la **definizione** della nozione di <mark style="background-color: #023047; color: white">**basicness**</mark>, basandosi sulla letteratura esistente sulla *concreteness*
 
 ---
 layout: two-cols
@@ -109,7 +109,7 @@ layout: two-cols
 
 Roger Brown pone una *domanda* fondamentale: 
 
-> Come facciamo a scegliere un **termine appropiato** per un **concetto** scelto?
+> Come facciamo a scegliere un <mark>**termine appropiato**</mark> per un **concetto** scelto?
 
 ::right::
 
@@ -192,7 +192,7 @@ layout: center
 
 # Text-Based Pipeline
 
-La prima pipeline utilizza *OPT*, un large language model generativo **transformer-based**.
+La prima pipeline utilizza *OPT*, un large language model generativo <mark>**transformer-based**</mark>.
 
 <center>
   <img src="/images/OPT-pipeline.png" style="width: 60%"/>
@@ -204,10 +204,10 @@ layout: two-cols
 
 # Transformers
 
-Rete neurale basata su uno stack di **encoder-decoder**, adatta per dati di tipo testuale.
+Rete neurale basata su uno <mark>stack **encoder-decoder**</mark>, adatta per dati di tipo testuale.
 
-- **Encoder**: processa la sequenza di input (una serie di token) e restituisce **embeddings** (una rappresentazione contestuale verso il decoder) utilizzando layer di **self-attention**, **normalization** e **FFN**.
-- **Decoder**: prende gli embeddings in input e ha come output finale una distribuzione probabilistica sul singolo token.
+- **Encoder**: processa la sequenza di input (una serie di token) e restituisce **embeddings** (una rappresentazione contestuale verso il decoder) utilizzando layer di <mark style="background-color: #fb8500">**self-attention**</mark>, **normalization** e **FFN**.
+- **Decoder**: prende gli embeddings in input e ha come output finale una <mark style="background-color: #219ebc">distribuzione probabilistica</mark> sul singolo token.
 
 <center>
   <img src="/images/Transformer_decoder.png" style=""/>
@@ -225,7 +225,7 @@ layout: center
 
 # Architettura OPT
 
-Suite di decoder-only pre-trained transformers: architettura **auto-regressiva** semplice, composta solo da decoder impilati. Utilizzato unicamente per scopi **generativi**.
+Suite di decoder-only pre-trained transformers: architettura <mark>**auto-regressiva**</mark> semplice, composta solo da decoder impilati. Utilizzato unicamente per scopi **generativi**.
 
 <center>
   <img src="/images/opt-decoder-only.png" style="width: 50%"/>
@@ -233,24 +233,24 @@ Suite di decoder-only pre-trained transformers: architettura **auto-regressiva**
 
 ---
 
-# I LLM non sono altro che Next Token Predictor
+# I LLMs sono Next Token Predictors
 
-- **Obiettivo**: prevedere il **token successivo** in una sequenza di parole, migliorando la coerenza e la comprensione del testo generato
+- **Obiettivo**: <mark>prevedere il **token successivo**</mark> in una sequenza di parole, migliorando la coerenza e la comprensione del testo generato
 - **Funzionamento**:
   - Viene utilizzata la *multi-headed attention* per catturare informazioni da contesti diversi
   - Calcola la **probabilità** di ciascun token candidato nel **vocabolario**
-  - Seleziona il token con la **probabilità più alta** come previsione successiva
+  - <mark style="background-color: #fb8500">Seleziona il token con la **probabilità più alta**</mark> come previsione successiva
 
 <br><br>
 <div style="text-align: center;">
   <v-clicks>
-  <div style="display: inline-block; width: 100px; height: 100px; margin: 10px;">Federico</div>
-  <div style="display: inline-block; width: 100px; height: 100px; margin: 10px;">prenderà</div>
-  <div style="display: inline-block; width: 80px; height: 100px; margin: 10px;">come</div>
-  <div style="display: inline-block; width: 80px; height: 100px; margin: 10px;">voto</div>
-  <div style="display: inline-block; width: 70px; height: 100px; margin: 10px;">di</div>
-  <div style="display: inline-block; width: 60px; height: 100px; margin: 10px;">laurea</div>
-  <div style="display: inline-block; width: 70px; height: 100px; margin: 10px;">...</div>
+  <div style="display: inline-block; width: 100px; height: 100px; margin: 10px;"><mark style="background-color: #0077b6;">Federico</mark></div>
+  <div style="display: inline-block; width: 100px; height: 100px; margin: 10px;"><mark style="background-color: #0096c7">prenderà</mark></div>
+  <div style="display: inline-block; width: 80px; height: 100px; margin: 10px;"><mark style="background-color: #00b4d8">come</mark></div>
+  <div style="display: inline-block; width: 80px; height: 100px; margin: 10px;"><mark style="background-color: #48cae4">voto</mark></div>
+  <div style="display: inline-block; width: 70px; height: 100px; margin: 10px;"><mark style="background-color: #90e0ef">di</mark></div>
+  <div style="display: inline-block; width: 60px; height: 100px; margin: 10px;"><mark style="background-color: #ade8f4">laurea</mark></div>
+  <div style="display: inline-block; width: 70px; height: 100px; margin: 10px;"><mark style="background-color: #caf0f8">...</mark></div>
   </v-clicks>
 </div>
 
@@ -258,7 +258,7 @@ Suite di decoder-only pre-trained transformers: architettura **auto-regressiva**
 layout: center
 ---
 
-# Come estrarre termini basic/advanced con un modello generativo?
+# Come classificare con un modello generativo?
 
 - **Creazione** di una *basic raw list*
 - **Filtraggio** tramite *OPT*
@@ -593,7 +593,11 @@ coverDate: ''
 ---
 
 <div style="position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; left: 0;">
-  <img src="/images/final_background.png" style="height: 100%; width: 100%;">
+  <video autoplay loop muted style="height: 100%; width: 100%;">
+    <source src="/videos/final-background.webm" type="video/webm">
+    <source src="/videos/final-background.m4v" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
   <img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 20%">
   <div class="bottom-10" style="position: absolute; left: 20px; background-color: white; padding: 10px; border-radius: 10px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);">
     <h1 style="color: black; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">Grazie per l'attenzione</h1>
