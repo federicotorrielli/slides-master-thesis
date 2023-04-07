@@ -363,9 +363,9 @@ layout: center
 
 # Generare immagini
 
-- Viene utilizzata la **diffusione**: un processo a doppia passata per allenare modelli a partire da enormi dataset di immagini
-  - **Forward pass**: viene *distrutta* la struttura dei dati aggiungendo del **rumore Gaussiano** all'immagine attraverso una *catena di Markov*. I dati vengono *assorbiti* nello spazio latente.
-  - **Backward pass**: si cerca di re-imparare i dati di origine andando a progressivamente **rimuovere il rumore dalle immagini**, navigando nello spazio latente e generando nuovi dati
+- Viene utilizzata la **diffusione**: un <mark>processo a doppia passata</mark> per allenare modelli a partire da enormi dataset di immagini
+  - <mark style="background-color: #fb8500">**Forward pass**</mark>: viene *distrutta* la struttura dei dati aggiungendo del **rumore Gaussiano** all'immagine attraverso una *catena di Markov*. I dati vengono *assorbiti* nello spazio latente.
+  - <mark style="background-color: #219ebc">**Backward pass**</mark>: si cerca di re-imparare i dati di origine andando a progressivamente **rimuovere il rumore dalle immagini**, navigando nello spazio latente e generando nuovi dati
 
 
 <center>
@@ -395,7 +395,7 @@ layout: center
 
 # Interrogare immagini
 
-Viene utilizzato **BLIP**, un sistema multi-modale capace di generare delle descrizioni delle immagini presentate. Gli autori del paper hanno scelto di utilizzare un **ViT** (Vision Transformer) e un **MED** (Multi-modal mixture of Encoder-Decoder).
+Viene utilizzato **BLIP**, un sistema multi-modale capace di <mark>generare delle descrizioni</mark> delle immagini presentate. Gli autori del paper hanno scelto di utilizzare un **ViT** (Vision Transformer) e un **MED** (Multi-modal mixture of Encoder-Decoder).
 
 - **ViT**: scompone l'immagine di partenza in **features** e trasforma le features in una sequenza di **embeddings**
 - **MED**: produce degli stati dati in pasto ad un Transformer, che fa **image captioning**. MED opera come **Unimodal Encoder** (ITC Loss) e **Image-grounded text enc/decoder** (ITM+LM Loss)
@@ -408,7 +408,7 @@ layout: center
 
 # Valutare immagini
 
-Valutiamo se l'immagine si avvicina al lemma originale che l'ha generata utilizzando **SBERT**, una rete *siamese* (due reti identiche in training, comparate in testing) BERT-based che utilizza un layer di *pooling* per generare degli **embeddings** utilizzati per confrontare testi in uno spazio semantico utilizzando la **cosine-similarity**.
+Valutiamo se <mark>la descrizione si avvicina al lemma originale</mark> utilizzando **SBERT**, una rete *siamese* (due reti identiche in training, comparate in testing) BERT-based che utilizza un layer di *pooling* per generare degli **embeddings** utilizzati per <mark style="background-color: #fb8500">confrontare testi in uno spazio semantico</mark> utilizzando la **cosine-similarity**.
 
 Abbiamo costruito un componente *custom* per adattare il task di classificazione selezionato
 
@@ -418,7 +418,7 @@ layout: center
 
 # Classificazione
 
-Una volta raccolte le *cosine-similarities* di tutte le immagini, si fa un **threshold sweep** per verificare quale sia il limite superiore di classificazione. 
+Una volta raccolte le *cosine-similarities* di tutte le immagini, si fa un <mark>**threshold sweep**</mark> per verificare quale sia il limite superiore di classificazione. 
 
 *e.g.*: se $x$ è il threshold, allora: $\forall y<x, y$ basic, advanced altrimenti.
 
@@ -430,7 +430,7 @@ Una volta raccolte le *cosine-similarities* di tutte le immagini, si fa un **thr
 
 # Il task di annotazione
 
-Per comparare i dati classificati dai metodi automatici con uno **standard** abbiamo creato un tool personalizzato e sottoposto **10 second-language-learners** al task di annotazione di **basic vs. advanced** sulle *500 parole*.
+Per comparare i dati classificati dai metodi automatici con uno **standard** abbiamo creato un tool personalizzato e sottoposto <mark>**10 second-language-learners**</mark> al task di annotazione di **basic vs. advanced** sulle *500 parole*.
 
 Tra i dati interessanti raccolti menzioniamo:
 
@@ -450,7 +450,7 @@ Tra i dati interessanti raccolti menzioniamo:
 
 # Agreement tra gli annotatori
 
-Abbiamo ottenuto un **alto** inter-annotation agreement, misurato con il Coefficiente *k* di **Cohen**, la cui formula è 
+Abbiamo ottenuto un **alto** inter-annotation agreement, misurato con il <mark>Coefficiente *k* di **Cohen**</mark>, la cui formula è 
 
 $$k=\frac{p_o-p_e}{1-p_e}$$
 
@@ -472,7 +472,7 @@ coverDate: ''
 
 <center>
   <h1>0.71</h1>
-  <b>agreement</b> tra annotatori, che indica un task con <b>ottime guidelines</b>
+  <b>agreement</b> tra annotatori, che indica un task con <mark><b>ottime guidelines</b></mark>
 </center>
 
 ---
@@ -481,7 +481,7 @@ layout: two-cols
 
 # Fatti interessanti
 
-- Gli annotatori hanno impiegato più tempo (*80% in più*) a valutare parole basic piuttosto che quelle advanced
+- Gli annotatori hanno impiegato <mark>più tempo (*80% in più*) a valutare parole basic</mark> piuttosto che quelle advanced
 - Il tempo medio è stato di **1.40 secondi**
 - Le parole più difficili da classificare sono state:
   - Parole composte da più basic: **vitamin pill**
@@ -506,7 +506,7 @@ transitions: slide-up
 
 Dalle analisi è risultato che la classificazione **basic vs. advanced** non è una **proprietà binaria**, ma deve essere posizionata su una scala misurabile.
 
-Da questa ipotesi è nata la **basicness**, una misura similare alla *concreteness* che segnala quanto è basic un certo termine, basandosi sullo **split** nell'annotazione del lemma stesso.
+Da questa ipotesi è nata la **basicness**, una misura similare alla *concreteness* che <mark>segnala quanto è basic un certo termine</mark>, basandosi sullo **split** nell'annotazione del lemma stesso.
 
 ::right::
 
@@ -528,13 +528,13 @@ Da questa ipotesi è nata la **basicness**, una misura similare alla *concretene
 
 # Una scoperta interessante
 
-Investigando sui dati raccolti abbiamo scoperto che **termini basic e concreti sono meglio riconosciuti dal livello testuale**.
+Investigando sui dati raccolti abbiamo scoperto che <mark>**termini basic e concreti sono meglio riconosciuti dal livello testuale**</mark>.
 
 Questo ci ha portato a ipotizzare che l'**image level** fosse più adatto a classificare la **concreteness**.
 
 <v-click>
 
-L'ipotesi è stata confermata dal nostro *secondo esperimento*: **concrete vs. abstract**
+L'ipotesi è stata confermata dal nostro *secondo esperimento*: <mark style="background-color: #fb8500">**concrete vs. abstract**</mark>
 
 - Presa una lista di concetti dal database di **MRC**, con score **[0, 700]**
 - Classificati tutti i sostantivi nella lista con i nostri due metodi (con fine-tuning sulla concreteness)
@@ -551,7 +551,7 @@ L'ipotesi è stata confermata dal nostro *secondo esperimento*: **concrete vs. a
   <img src="/images/table_concreteabstract.png" style="width: 60%">
 </center>
 
-Questi risultati indicano che quando si tratta di differenziare concetti concreti da astratti, i due metodi performano **al contario** rispetto al task precedente!
+Questi risultati indicano che quando si tratta di differenziare concetti concreti da astratti, <mark>i due metodi performano **al contario**</mark> rispetto al task precedente!
 
 <v-click>
 
@@ -564,7 +564,7 @@ L'origine di questa discrepanza è nell'architettura e nel **training set** dei 
 
 ---
 
-# Conclusione: Sum-up
+# Sum-up
 
 - Proposta una nuova nozione di **"basicness"** ispirata alla letteratura sulla concreteness
 - Creata un'ampia **wordlist inter-categoria** di parole basic/advanced
@@ -584,8 +584,8 @@ L'origine di questa discrepanza è nell'architettura e nel **training set** dei 
 
 # Sidenote Finale
 
-- I ricercatori dovrebbero avere una prospettiva equilibrata sui LLMs e sugli LDMs. Non dovrebbero essere temuti, glorificati o eccessivamente pubblicizzati. Sono strumenti per aiutare gli umani ma non sono intelligenti o in grado di pensare o immaginare come gli umani. Un'enfasi eccessiva potrebbe portare a un nuovo **"AI Winter"**
-- Sebbene le aziende promuovano i progressi nell'AI, le università dovrebbero competere con loro per promuovere modelli aperti e ricerche per una vera apertura. La ricerca condotta solo dalle aziende potrebbe mancare della necessaria trasparenza e collaborazione per condividere i risultati con la comunità di ricerca in generale.
+- I ricercatori dovrebbero avere una <mark>prospettiva equilibrata</mark> sui LLMs e sugli LDMs. Non dovrebbero essere temuti, glorificati o eccessivamente pubblicizzati. Sono strumenti per aiutare gli umani ma non sono intelligenti o in grado di pensare o immaginare come gli umani. Un'enfasi eccessiva potrebbe portare a un nuovo **"AI Winter"**
+- Sebbene le aziende promuovano i progressi nell'AI, le università dovrebbero competere con loro per <mark style="background-color: #fb8500">promuovere modelli aperti</mark> e ricerche per una vera apertura. La ricerca condotta solo dalle aziende potrebbe mancare della <mark style="background-color: #219ebc">necessaria trasparenza e collaborazione</mark> per condividere i risultati con la comunità di ricerca in generale.
 
 ---
 layout: cover
