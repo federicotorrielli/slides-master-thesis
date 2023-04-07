@@ -357,7 +357,7 @@ layout: center
 
 # Come mai abbiamo bisogno del livello visivo?
 
-**Ipotesi**: un sistema che possiede l'abilità di riconoscere l'informazione dal livello testuale al livello visivo (e viceversa), ha una conoscenza profonda del suo contenuto, in maniera similare a come l'uomo conosce il mondo.
+**Ipotesi**: un sistema che possiede l'abilità di riconoscere l'informazione <mark>dal livello testuale al livello visivo (e viceversa)</mark>, ha una <mark style="background-color: #fb8500">conoscenza profonda</mark> del suo contenuto, in maniera similare a come l'uomo conosce il mondo.
 
 ---
 
@@ -595,7 +595,7 @@ coverDate: ''
 <div style="position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; left: 0;">
   <video autoplay loop muted style="height: 100%; width: 100%;">
     <source src="/videos/final-background.webm" type="video/webm">
-    <source src="/videos/final-background.m4v" type="video/mp4">
+    <source src="/videos/final-background.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 20%">
