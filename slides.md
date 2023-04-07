@@ -379,8 +379,8 @@ layout: center
 
 <center>
   <video controls>
-    <source src="/videos/castle-animation.webm" type="video/webm">
     <source src="/videos/castle-animation.mp4" type="video/mp4">
+    <source src="/videos/castle-animation.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
 </center>
@@ -594,8 +594,8 @@ coverDate: ''
 
 <div style="position: absolute; height: 100%; width: 100%; margin: 0; padding: 0; top: 0; left: 0;">
   <video autoplay loop muted style="height: 100%; width: 100%;">
-    <source src="/videos/final-background.webm" type="video/webm">
     <source src="/videos/final-background.mp4" type="video/mp4">
+    <source src="/videos/final-background.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
   <img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 20%">
