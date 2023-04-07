@@ -109,7 +109,7 @@ layout: two-cols
 
 Roger Brown pone una *domanda* fondamentale: 
 
-> Come facciamo a scegliere un <mark>**termine appropiato**</mark> per un **concetto** scelto?
+> Come facciamo a scegliere un <mark>**termine appropriato**</mark> per un **concetto** scelto?
 
 ::right::
 
