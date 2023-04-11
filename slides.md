@@ -382,11 +382,7 @@ layout: center
 ---
 
 <center>
-  <video controls>
-    <source src="/videos/castle-animation.mp4" type="video/mp4">
-    <source src="/videos/castle-animation.webm" type="video/webm">
-    Your browser does not support the video tag.
-  </video>
+  <iframe width="660" height="415" src="https://www.youtube.com/embed/FKrzb7aAc1E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </center>
 
 ---
