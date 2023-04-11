@@ -63,6 +63,10 @@ Solo grazie ad esso riusciamo a comunicare, costruire relazioni e creare comunit
 
 La stessa azione del comunicare è considerevole e sottovalutata: ci permette (non ironicamente!) di **leggere nelle menti** altrui.
 
+<a href="https://torrielli.netlify.app">
+  <img src="/images/qrcode.png" style="position: absolute; float: right; top: 30px; right: 30px; width: 13%">
+</a>
+
 
 ---
 layout: center
